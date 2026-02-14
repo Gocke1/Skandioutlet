@@ -13,7 +13,6 @@ export function Header() {
         <div className="nav-links">
           <Link href="/products">Produkter</Link>
           <Link href="/contact">Kontakt</Link>
-          <Link href="/admin">Admin</Link>
         </div>
         <Link href="/" className="brand" aria-label="Skandioutlet startsida">
           <img src="/logo.svg" alt="Skandioutlet" className="brand-logo" />
