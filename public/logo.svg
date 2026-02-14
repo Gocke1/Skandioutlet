@@ -1,5 +1,60 @@
-<svg width="220" height="44" viewBox="0 0 220 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="220" height="44" rx="6" fill="#0D2B52"/>
-<text x="16" y="28" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">SKANDI</text>
-<text x="96" y="28" fill="#D33A44" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">OUTLET</text>
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Skandioutlet logotyp</title>
+  <desc id="desc">Skandioutlet med nordisk siluett, svensk flagga och kundvagn</desc>
+
+  <defs>
+    <linearGradient id="mountain" x1="180" y1="80" x2="760" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5B6773"/>
+      <stop offset="1" stop-color="#1C2836"/>
+    </linearGradient>
+    <linearGradient id="cart" x1="560" y1="270" x2="760" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B4652"/>
+      <stop offset="1" stop-color="#8A96A3"/>
+    </linearGradient>
+    <linearGradient id="wordBlue" x1="80" y1="190" x2="540" y2="250" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B63D1"/>
+      <stop offset="1" stop-color="#0448A7"/>
+    </linearGradient>
+    <linearGradient id="wordRed" x1="560" y1="200" x2="1040" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF1A1A"/>
+      <stop offset="1" stop-color="#D40000"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M170 160L270 72L340 125L410 35L500 138L560 94L650 164H170Z" fill="url(#mountain)"/>
+  <path d="M260 160L300 108L336 132L370 82L400 138L428 118L470 160H260Z" fill="#273240"/>
+  <path d="M525 160L580 100L620 160H525Z" fill="#24303D"/>
+  <path d="M575 160L614 70L654 160H575Z" fill="#2E3C4D"/>
+  <path d="M640 160L680 110L720 160H640Z" fill="#24303D"/>
+  <path d="M710 160L730 90L750 160H710Z" fill="#2E3C4D"/>
+  <rect x="740" y="128" width="120" height="32" rx="8" fill="#313C49"/>
+  <rect x="868" y="58" width="20" height="102" rx="8" fill="#2A3645"/>
+  <path d="M890 74C915 92 951 92 978 78V126C951 140 915 140 890 122V74Z" fill="#0B63D1"/>
+  <path d="M929 76V126" stroke="#FFD21E" stroke-width="8"/>
+  <path d="M892 98H976" stroke="#FFD21E" stroke-width="8"/>
+
+  <text x="70" y="260" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="900" fill="url(#wordBlue)">Skandi</text>
+  <text x="560" y="260" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="900" fill="url(#wordRed)">outlet</text>
+
+  <path d="M430 350C540 316 650 316 760 350" stroke="#D40000" stroke-width="16" stroke-linecap="round"/>
+  <path d="M760 350C836 352 905 334 970 294" stroke="#0B63D1" stroke-width="16" stroke-linecap="round"/>
+
+  <g transform="translate(560 270)">
+    <path d="M20 20H168L150 82H44L20 20Z" fill="url(#cart)" stroke="#1F2933" stroke-width="5"/>
+    <path d="M50 20L42 0H12" stroke="#1F2933" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="64" cy="96" r="11" fill="#E8ECF1" stroke="#1F2933" stroke-width="4"/>
+    <circle cx="136" cy="96" r="11" fill="#E8ECF1" stroke="#1F2933" stroke-width="4"/>
+    <rect x="58" y="40" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="80" y="40" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="102" y="40" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="124" y="40" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="58" y="61" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="80" y="61" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="102" y="61" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="124" y="61" width="14" height="14" rx="2" fill="#EFF2F6"/>
+    <rect x="34" y="-10" width="34" height="34" rx="3" fill="#E30613"/>
+    <rect x="72" y="-10" width="30" height="34" rx="3" fill="#0B63D1"/>
+    <path d="M44 -10C44 -22 58 -22 58 -10" stroke="#454F5A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M79 -10C79 -22 93 -22 93 -10" stroke="#454F5A" stroke-width="5" stroke-linecap="round"/>
+  </g>
 </svg>
