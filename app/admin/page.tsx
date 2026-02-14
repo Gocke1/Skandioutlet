@@ -3,13 +3,25 @@
 import { FormEvent, useState } from 'react';
 import { useStore } from '@/components/store-provider';
 
-const defaultProduct = {
+type ProductDraft = {
+  id: string;
+  name: string;
+  description: string;
+  specs: string;
+  price: number;
+  salePrice?: number;
+  stock: number;
+  image: string;
+  category: string;
+  popularity: number;
+};
+
+const defaultProduct: ProductDraft = {
   id: '',
   name: '',
   description: '',
   specs: '',
   price: 0,
-  salePrice: 0,
   stock: 0,
   image: '',
   category: 'Övrigt',
@@ -48,7 +60,12 @@ export default function AdminPage() {
         <textarea placeholder="Beskrivning" value={draft.description} onChange={(e) => setDraft({ ...draft, description: e.target.value })} required />
         <input placeholder="Specifikationer kommaseparerat" value={draft.specs} onChange={(e) => setDraft({ ...draft, specs: e.target.value })} />
         <input type="number" placeholder="Pris" value={draft.price} onChange={(e) => setDraft({ ...draft, price: Number(e.target.value) })} />
-        <input type="number" placeholder="Reapris" value={draft.salePrice} onChange={(e) => setDraft({ ...draft, salePrice: Number(e.target.value) })} />
+        <input
+          type="number"
+          placeholder="Reapris"
+          value={draft.salePrice ?? ''}
+          onChange={(e) => setDraft({ ...draft, salePrice: e.target.value ? Number(e.target.value) : undefined })}
+        />
         <input type="number" placeholder="Lager" value={draft.stock} onChange={(e) => setDraft({ ...draft, stock: Number(e.target.value) })} />
         <input placeholder="Bild-URL" value={draft.image} onChange={(e) => setDraft({ ...draft, image: e.target.value })} required />
         <input placeholder="Kategori" value={draft.category} onChange={(e) => setDraft({ ...draft, category: e.target.value })} />
