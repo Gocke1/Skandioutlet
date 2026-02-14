@@ -3,10 +3,13 @@
 import { useMemo, useState } from 'react';
 import { useStore } from '@/components/store-provider';
 
+const paymentMethods = ['Kort (Visa/Mastercard/Amex)', 'Klarna', 'Swish', 'Apple Pay', 'Google Pay'];
+
 export default function CheckoutPage() {
   const { cart, products, coupons, createOrder } = useStore();
   const [couponCode, setCouponCode] = useState('');
   const [email, setEmail] = useState('');
+  const [selectedPayment, setSelectedPayment] = useState('');
   const [confirmation, setConfirmation] = useState('');
 
   const subtotal = useMemo(
@@ -26,7 +29,6 @@ export default function CheckoutPage() {
   return (
     <section className="container section">
       <h1>Kassa</h1>
-      <p>Betalning: Visa, Mastercard, Amex, Klarna, Swish, Apple Pay, Google Pay, Stripe.</p>
       <p>Trust badges: SSL-skydd, Trygg E-handel, 14 dagars retur.</p>
       <div className="form">
         <input placeholder="E-post för orderbekräftelse" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -36,6 +38,23 @@ export default function CheckoutPage() {
           onChange={(e) => setCouponCode(e.target.value)}
         />
       </div>
+
+      <h3>Välj betalningsmetod</h3>
+      <div className="payment-methods" role="radiogroup" aria-label="Betalningsmetoder">
+        {paymentMethods.map((method) => (
+          <label key={method} className="payment-option">
+            <input
+              type="radio"
+              name="payment-method"
+              value={method}
+              checked={selectedPayment === method}
+              onChange={(event) => setSelectedPayment(event.target.value)}
+            />
+            <span>{method}</span>
+          </label>
+        ))}
+      </div>
+
       <p>Delsumma: {subtotal} kr</p>
       <p>Rabatt: -{discount} kr</p>
       <p>Frakt: {shipping} kr</p>
@@ -43,13 +62,16 @@ export default function CheckoutPage() {
       <button
         className="cta"
         onClick={() => {
-          if (!email) return;
+          if (!email || !selectedPayment) return;
           const order = createOrder(email, total);
-          setConfirmation(`Order ${order.id} skapad. Bekräftelsemail skickas automatiskt till ${email}.`);
+          setConfirmation(
+            `Order ${order.id} skapad med ${selectedPayment}. Bekräftelsemail skickas automatiskt till ${email}.`
+          );
         }}
       >
-        Slutför köp
+        Betala och slutför köp
       </button>
+      {!selectedPayment ? <p>Välj en betalningsmetod för att kunna slutföra köpet.</p> : null}
       {confirmation ? <p>{confirmation}</p> : null}
     </section>
   );
