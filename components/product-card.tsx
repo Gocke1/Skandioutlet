@@ -20,7 +20,14 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="actions">
         <Link href={`/products/${product.id}`}>Visa produkt</Link>
-        <button onClick={() => addToCart(product.id)}>Lägg i kundvagn</button>
+        <Link
+          href="/cart"
+          onClick={() => addToCart(product.id)}
+          className="add-to-cart-link"
+          aria-label={`Lägg ${product.name} i kundvagnen`}
+        >
+          Lägg i kundvagn
+        </Link>
       </div>
     </article>
   );
