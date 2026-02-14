@@ -1,6 +1,6 @@
 # Skandioutlet – modern e-handel (Next.js)
 
-En publiceringsklar grund för en minimalistisk premium-webbshop med fokus på konvertering, mobil först och enkel adminhantering.
+En publiceringsklar grund för en minimalistisk premium-webbshop med fokus på konvertering och mobil först.
 
 ## Funktioner
 - Startsida med hero, CTA, trust-fördelar, utvalda produkter och footer
@@ -8,7 +8,6 @@ En publiceringsklar grund för en minimalistisk premium-webbshop med fokus på k
 - Produktdetalj med zoom, lagerstatus, specifikationer, reviews-placeholder och relaterade produkter
 - Kundvagn med sticky checkout-knapp
 - Checkout med rabattkod, fraktberäkning, orderöversikt och betalmetoder (Stripe/Klarna/Swish/Apple Pay/Google Pay)
-- Adminpanel för produkt/lagersaldo/orderstatus/rabattkod/SEO-metadata
 - Juridiska sidor: villkor, integritet/retur
 - GDPR-cookie banner
 - Nyhetsbrev-popup för första köpet-kod
