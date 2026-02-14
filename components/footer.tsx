@@ -10,9 +10,7 @@ export function Footer() {
         </div>
         <div>
           <h4>Kontakt</h4>
-          <p>info@skandioutlet.se</p>
-          <p>+46 10 123 45 67</p>
-          <p>Org.nr: 559999-1234</p>
+          <p>Kontakta oss via kontaktformuläret.</p>
         </div>
         <div>
           <h4>Juridik</h4>
