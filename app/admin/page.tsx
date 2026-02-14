@@ -31,7 +31,7 @@ const defaultProduct: ProductDraft = {
 export default function AdminPage() {
   const { products, orders, addProduct, updateProduct, deleteProduct, updateOrderStatus, addCoupon, updateSeo, seo } =
     useStore();
-  const [draft, setDraft] = useState(defaultProduct);
+  const [draft, setDraft] = useState<ProductDraft>(defaultProduct);
 
   const totalRevenue = orders.reduce((sum, order) => sum + order.total, 0);
 
