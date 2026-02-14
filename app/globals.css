@@ -6,12 +6,28 @@
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; font-family: Inter, Arial, sans-serif; color: var(--text); background: white; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 15%, rgba(145, 166, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 90% 5%, rgba(255, 166, 194, 0.22), transparent 28%),
+    linear-gradient(165deg, #eef2ff 0%, #f8f6ff 38%, #fff9f1 100%);
+  min-height: 100vh;
+}
 a { color: inherit; text-decoration: none; }
 .container { width: min(1100px, 92vw); margin: 0 auto; }
 .section { padding: 3rem 0; }
 
-.header { position: sticky; top: 0; z-index: 20; background: white; border-bottom: 1px solid #eceff3; }
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(250, 251, 255, 0.88);
+  border-bottom: 1px solid #eceff3;
+  backdrop-filter: blur(8px);
+}
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }
 .nav-links { display: flex; gap: 1rem; font-size: .95rem; }
 .brand-logo { width: 160px; height: auto; }
@@ -21,6 +37,99 @@ a { color: inherit; text-decoration: none; }
 .hero-logo { width: 220px; }
 .hero h1 { font-size: clamp(2rem, 4.3vw, 3.4rem); margin-bottom: .5rem; }
 .cta { background: var(--blue); color: #fff; border: 0; padding: .85rem 1.2rem; border-radius: 999px; display: inline-block; }
+
+.home-page { padding-bottom: 2rem; }
+.home-page .hero {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 1.2rem;
+  text-align: left;
+  align-items: stretch;
+}
+.home-page .hero-content,
+.home-page .hero-panel,
+.comfort-card,
+.modern-about,
+.featured-section .section-heading,
+.home-page .product-card {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 16px 40px rgba(39, 47, 89, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 22px;
+}
+.home-page .hero-content {
+  padding: 2.6rem;
+  position: relative;
+  overflow: hidden;
+}
+.home-page .hero-content::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -90px;
+  bottom: -100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103, 103, 255, 0.32), rgba(103, 103, 255, 0));
+}
+.home-page .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .76rem;
+  font-weight: 700;
+  color: #4b4aa8;
+}
+.home-page .hero h1 { margin: .8rem 0; line-height: 1.08; }
+.home-page .hero p { font-size: 1.02rem; line-height: 1.65; max-width: 60ch; }
+.home-page .hero-actions { display: flex; gap: .8rem; margin-top: 1.2rem; flex-wrap: wrap; }
+.ghost-cta {
+  display: inline-block;
+  border-radius: 999px;
+  padding: .82rem 1.2rem;
+  border: 1px solid rgba(51, 58, 68, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+.home-page .hero-panel {
+  padding: 1.8rem;
+  display: grid;
+  align-content: start;
+  gap: .8rem;
+}
+.home-page .hero-panel p { margin: 0; line-height: 1.55; }
+.home-page .hero-logo { width: 180px; }
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .7rem;
+  margin-top: .4rem;
+}
+.hero-stats div {
+  background: rgba(12, 20, 43, 0.8);
+  color: #f6f7ff;
+  border-radius: 14px;
+  padding: .8rem;
+  display: grid;
+  gap: .1rem;
+}
+.hero-stats strong { font-size: 1.05rem; }
+.hero-stats span { font-size: .75rem; opacity: .8; }
+
+.comfort-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 0;
+}
+.comfort-card { padding: 1.25rem; }
+.comfort-card h3 { margin: 0 0 .45rem; }
+.comfort-card p { margin: 0; line-height: 1.6; }
+.featured-section .section-heading { padding: 1.2rem 1.3rem; margin-bottom: 1rem; }
+.featured-section .section-heading h2,
+.featured-section .section-heading p { margin: 0; }
+.featured-section .section-heading p { margin-top: .45rem; }
+.modern-about { padding: 1.5rem; }
 
 .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding-bottom: 2rem; }
 .benefits div, .product-card, .admin-table div, .cart-item { background: var(--bg); border-radius: 14px; padding: 1rem; box-shadow: 0 8px 24px rgba(13, 43, 82, .06); }
@@ -54,8 +163,20 @@ input, textarea, select { width: 100%; padding: .7rem .8rem; border-radius: 10px
 
 .sticky-cart { position: fixed; right: 1rem; bottom: 1rem; }
 
+@media (max-width: 900px) {
+  .home-page .hero {
+    grid-template-columns: 1fr;
+    padding-top: 2.5rem;
+  }
+
+  .comfort-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 800px) {
   .nav { flex-wrap: wrap; justify-content: center; padding: .5rem 0; }
   .benefits { grid-template-columns: 1fr; }
   .product-detail { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr; }
 }
